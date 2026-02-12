@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>67 — Landing Page</title>
+  <meta name="description" content="67 — Solusi digital kreatif. Landing page dengan background ambient angka '67'." />
+
+  <style>
+    :root{
+      --bg:#101933;
+      --card:#0f1724;
+      --text:#e6eef8;
+      --muted:#9fb0d4;
+      --accent:#6ad2ff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(106,210,255,0.05), transparent), var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* ===== Floating background ===== */
+    .float-layer{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    }
+
+    .float-item{
+      position:absolute;
+      font-weight:700;
+      color:var(--accent);
+      opacity:0.06;
+      user-select:none;
+      transform:translate(-50%,-50%);
+      text-shadow:0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    /* ===== Layout ===== */
+    .page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+
+    header{
+      padding:24px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:46px;height:46px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#7b9cff);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#06203a
+    }
+
+    nav a{
+      margin-left:20px;
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+    }
+    nav a:hover{color:var(--text)}
+
+    main{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      padding:80px 32px;
+    }
+
+    .main-wrap{
+      width:100%;
+      max-width:1200px;
+      display:grid;
+      grid-template-columns:1.3fr 0.7fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .hero h1{font-size:42px;line-height:1.05;margin:0}
+    .hero p{color:var(--muted);font-size:18px;max-width:600px}
+
+    .cta{margin-top:24px;display:flex;gap:12px}
+    .btn{
+      padding:12px 18px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .btn.primary{background:var(--accent);color:#042236}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.1)}
+
+    .panel{
+      background:var(--card);
+      padding:24px;
+      border-radius:16px;
+    }
+
+    section{
+      padding:80px 32px;
+      display:flex;
+      justify-content:center;
+      border-top:1px solid rgba(255,255,255,0.04)
+    }
+
+    .section-wrap{max-width:1000px;width:100%}
+
+    footer{
+      text-align:center;
+      padding:32px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width:900px){
+      .main-wrap{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="float-layer"></div>
+
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="logo">67</div>
+        <strong>67</strong>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="main-wrap">
+        <div class="hero">
+          <h1>Designing digital products with clarity and purpose.</h1>
+          <p>67 adalah perusahaan pengembangan produk digital yang membantu brand, startup, dan organisasi membangun solusi digital yang relevan, efisien, dan siap bertumbuh.</p>
+          <p style="color:var(--muted);max-width:620px">Kami bekerja dari tahap awal—mulai dari riset, perancangan, hingga pengembangan—dengan fokus pada pengalaman pengguna, performa teknis, dan tujuan bisnis jangka panjang.</p>
+          <div class="cta">
+            <button class="btn primary">Get in touch</button>
+            <button class="btn ghost">Our services</button>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <small style="color:var(--muted)">Trusted by</small>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div>Startup</div>
+            <div>Enterprise</div>
+            <div>Agencies</div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <section id="about">
+      <div class="section-wrap">
+        <h2>About 67</h2>
+        <p style="color:var(--muted)">67 berdiri dengan visi membantu perusahaan dan individu mengubah ide menjadi produk digital yang nyata dan bernilai. Kami percaya bahwa produk digital yang baik lahir dari pemahaman masalah yang tepat, desain yang jelas, dan teknologi yang solid.</p>
+        <p style="color:var(--muted)">Pendekatan kami kolaboratif dan iteratif—kami bekerja dekat dengan klien untuk memastikan setiap keputusan desain dan teknis selaras dengan kebutuhan pengguna serta tujuan bisnis.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-wrap">
+        <h2>Services</h2>
+        <p style="color:var(--muted)">Kami menyediakan layanan end-to-end dalam pengembangan produk digital, fleksibel untuk tahap eksplorasi maupun pengembangan lanjutan.</p>
+        <ul style="color:var(--muted);margin-top:16px;line-height:1.8">
+          <li><strong>UI / UX Design</strong> — Riset pengguna, wireframe, dan desain antarmuka yang fokus pada kenyamanan serta konsistensi pengalaman.</li>
+          <li><strong>Web Development</strong> — Pengembangan website dan aplikasi web modern dengan performa, keamanan, dan skalabilitas sebagai prioritas.</li>
+          <li><strong>Product Strategy</strong> — Validasi ide, perencanaan roadmap, dan pengambilan keputusan berbasis data untuk memastikan produk tepat sasaran.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-wrap" style="text-align:center">
+        <h2>Let’s work together</h2>
+        <p style="color:var(--muted);max-width:600px;margin:0 auto">Apakah Anda sedang membangun produk baru, meningkatkan sistem yang sudah ada, atau membutuhkan partner digital jangka panjang? Kami siap berdiskusi dan mencari solusi terbaik bersama Anda.</p>
+        <div style="margin-top:20px">
+          <a class="btn primary" href="mailto:hello@67.co">Email Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> 67. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const layer = document.querySelector('.float-layer');
+    const COUNT = 40;
+    const floats = [];
+
+    for(let i=0;i<COUNT;i++){
+      const el = document.createElement('div');
+      el.className = 'float-item';
+      el.textContent = '67';
+      const size = 12 + Math.random()*40;
+      el.style.fontSize = size+'px';
+      const x = Math.random()*window.innerWidth;
+      const y = Math.random()*window.innerHeight;
+      layer.appendChild(el);
+      floats.push({el,x,y,phase:Math.random()*Math.PI*2});
+    }
+
+    function animate(){
+      const t = Date.now()/1000;
+      floats.forEach(f=>{
+        const dx = Math.sin(t+f.phase)*10;
+        const dy = Math.cos(t+f.phase)*10;
+        f.el.style.transform = `translate(${f.x+dx}px,${f.y+dy}px) translate(-50%,-50%)`;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
