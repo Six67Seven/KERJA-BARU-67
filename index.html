@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>67 — Landing Page</title>
-  <meta name="description" content="67 — Solusi digital kreatif. Landing page dengan background ambient angka '67'." />
+  <meta name="description" content="67 — Solusi digital kreatif." />
 
   <style>
     :root{
-      --bg:#101933;
+      --bg:#0b1020;
       --card:#0f1724;
       --text:#e6eef8;
       --muted:#9fb0d4;
@@ -16,8 +16,9 @@
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
-
+    html{
+      scroll-behavior:smooth;
+    }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
@@ -46,16 +47,30 @@
     }
 
     /* ===== Layout ===== */
-    .page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+    .page{
+      position:relative;
+      z-index:1;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
 
-    header{
-      padding:24px 32px;
+    /* ===== FIXED NAVBAR ===== */
+    header.navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:20px 32px;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      background:rgba(11,16,32,0.85);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      z-index:1000;
     }
 
-    .brand{display:flex;align-items:center;gap:12px}
     .logo{
       width:46px;height:46px;
       border-radius:10px;
@@ -69,6 +84,7 @@
       color:var(--muted);
       text-decoration:none;
       font-weight:600;
+      transition:0.2s;
     }
     nav a:hover{color:var(--text)}
 
@@ -76,7 +92,7 @@
       flex:1;
       display:flex;
       justify-content:center;
-      padding:80px 32px;
+      padding:160px 32px 80px; /* offset navbar */
     }
 
     .main-wrap{
@@ -88,19 +104,47 @@
       align-items:center;
     }
 
-    .hero h1{font-size:42px;line-height:1.05;margin:0}
-    .hero p{color:var(--muted);font-size:18px;max-width:600px}
+    .hero h1{
+      font-size:42px;
+      line-height:1.05;
+      margin:0;
+    }
 
-    .cta{margin-top:24px;display:flex;gap:12px}
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:600px;
+    }
+
+    .cta{
+      margin-top:24px;
+      display:flex;
+      gap:12px;
+    }
+
     .btn{
       padding:12px 18px;
       border-radius:12px;
       border:none;
       cursor:pointer;
       font-weight:700;
+      transition:0.2s;
     }
-    .btn.primary{background:var(--accent);color:#042236}
-    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.1)}
+
+    .btn.primary{
+      background:var(--accent);
+      color:#042236;
+    }
+
+    .btn.primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn.ghost{
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,0.1);
+    }
 
     .panel{
       background:var(--card);
@@ -109,13 +153,16 @@
     }
 
     section{
-      padding:80px 32px;
+      padding:120px 32px;
       display:flex;
       justify-content:center;
-      border-top:1px solid rgba(255,255,255,0.04)
+      border-top:1px solid rgba(255,255,255,0.04);
     }
 
-    .section-wrap{max-width:1000px;width:100%}
+    .section-wrap{
+      max-width:1000px;
+      width:100%;
+    }
 
     footer{
       text-align:center;
@@ -130,29 +177,29 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="float-layer"></div>
 
   <div class="page">
-    <header>
-      <div class="brand">
-        <div class="logo">67</div>
-        <strong>67</strong>
-      </div>
+    
+    <header class="navbar">
+      <div class="logo">67</div>
       <nav>
+        <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main>
+    <main id="hero">
       <div class="main-wrap">
         <div class="hero">
           <h1>Designing digital products with clarity and purpose.</h1>
           <p>67 adalah perusahaan pengembangan produk digital yang membantu brand, startup, dan organisasi membangun solusi digital yang relevan, efisien, dan siap bertumbuh.</p>
-          <p style="color:var(--muted);max-width:620px">Kami bekerja dari tahap awal—mulai dari riset, perancangan, hingga pengembangan—dengan fokus pada pengalaman pengguna, performa teknis, dan tujuan bisnis jangka panjang.</p>
+          <p>Kami bekerja dari tahap awal—mulai dari riset, perancangan, hingga pengembangan—dengan fokus pada pengalaman pengguna, performa teknis, dan tujuan bisnis jangka panjang.</p>
           <div class="cta">
             <button class="btn primary">Get in touch</button>
             <button class="btn ghost">Our services</button>
@@ -173,19 +220,17 @@
     <section id="about">
       <div class="section-wrap">
         <h2>About 67</h2>
-        <p style="color:var(--muted)">67 berdiri dengan visi membantu perusahaan dan individu mengubah ide menjadi produk digital yang nyata dan bernilai. Kami percaya bahwa produk digital yang baik lahir dari pemahaman masalah yang tepat, desain yang jelas, dan teknologi yang solid.</p>
-        <p style="color:var(--muted)">Pendekatan kami kolaboratif dan iteratif—kami bekerja dekat dengan klien untuk memastikan setiap keputusan desain dan teknis selaras dengan kebutuhan pengguna serta tujuan bisnis.</p>
+        <p style="color:var(--muted)">67 berdiri dengan visi membantu perusahaan dan individu mengubah ide menjadi produk digital yang nyata dan bernilai.</p>
       </div>
     </section>
 
     <section id="services">
       <div class="section-wrap">
         <h2>Services</h2>
-        <p style="color:var(--muted)">Kami menyediakan layanan end-to-end dalam pengembangan produk digital, fleksibel untuk tahap eksplorasi maupun pengembangan lanjutan.</p>
-        <ul style="color:var(--muted);margin-top:16px;line-height:1.8">
-          <li><strong>UI / UX Design</strong> — Riset pengguna, wireframe, dan desain antarmuka yang fokus pada kenyamanan serta konsistensi pengalaman.</li>
-          <li><strong>Web Development</strong> — Pengembangan website dan aplikasi web modern dengan performa, keamanan, dan skalabilitas sebagai prioritas.</li>
-          <li><strong>Product Strategy</strong> — Validasi ide, perencanaan roadmap, dan pengambilan keputusan berbasis data untuk memastikan produk tepat sasaran.</li>
+        <ul style="color:var(--muted);line-height:1.8">
+          <li><strong>UI / UX Design</strong></li>
+          <li><strong>Web Development</strong></li>
+          <li><strong>Product Strategy</strong></li>
         </ul>
       </div>
     </section>
@@ -193,7 +238,7 @@
     <section id="contact">
       <div class="section-wrap" style="text-align:center">
         <h2>Let’s work together</h2>
-        <p style="color:var(--muted);max-width:600px;margin:0 auto">Apakah Anda sedang membangun produk baru, meningkatkan sistem yang sudah ada, atau membutuhkan partner digital jangka panjang? Kami siap berdiskusi dan mencari solusi terbaik bersama Anda.</p>
+        <p style="color:var(--muted)">Kami siap berdiskusi dan mencari solusi terbaik bersama Anda.</p>
         <div style="margin-top:20px">
           <a class="btn primary" href="mailto:hello@67.co">Email Us</a>
         </div>
@@ -203,6 +248,7 @@
     <footer>
       © <span id="year"></span> 67. All rights reserved.
     </footer>
+
   </div>
 
   <script>
@@ -237,4 +283,4 @@
   </script>
 
 </body>
-</html> 
+</html>
