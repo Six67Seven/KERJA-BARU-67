@@ -34,18 +34,21 @@
       pointer-events:none;
       z-index:0;
       overflow:hidden;
+      mix-blend-mode:screen;
     }
 
     .float-item{
       position:absolute;
-      font-weight:700;
+      font-weight:800;
       color:var(--accent);
-      opacity:0.06;
+      opacity:0.15; /* sebelumnya 0.06 */
       user-select:none;
       transform:translate(-50%,-50%);
-      text-shadow:0 2px 8px rgba(0,0,0,0.4);
-    }
-
+      text-shadow:
+        0 0 8px rgba(106,210,255,0.6),
+        0 0 20px rgba(106,210,255,0.4),
+        0 0 40px rgba(106,210,255,0.2);
+    } 
     /* ===== Layout ===== */
     .page{
       position:relative;
